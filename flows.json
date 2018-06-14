@@ -1,0 +1,988 @@
+[
+    {
+        "id": "a148e93f.71c548",
+        "type": "tab",
+        "label": "Bakeout",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2199cfd8.9aa6b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Bakeout",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 44,
+                "sy": 44,
+                "gx": 1,
+                "gy": 1,
+                "cx": 1,
+                "cy": 1,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f66b31d0.8e554",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Bakeout",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "6a19989.bafc168",
+        "type": "ui_group",
+        "z": "",
+        "name": "Manual Control",
+        "tab": "f66b31d0.8e554",
+        "order": 1,
+        "disp": false,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "8d078b84.5c4638",
+        "type": "ui_group",
+        "z": "",
+        "name": "Settings",
+        "tab": "440eea00.76b618",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "440eea00.76b618",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Settings",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "70780e1b.d30f1",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "webApp",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "57303339.71261c",
+        "type": "ui_switch",
+        "z": "a148e93f.71c548",
+        "name": "HeaterControl",
+        "label": "Heater",
+        "group": "6a19989.bafc168",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "bake01/HeaterControl",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "b3186791.83e3f8"
+            ]
+        ]
+    },
+    {
+        "id": "4ae2a13c.0a8d4",
+        "type": "ui_chart",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "group": "6a19989.bafc168",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 530,
+        "y": 40,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "61279c78.ea4314",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "BlankPlot",
+        "func": "msg.payload = [];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 40,
+        "wires": [
+            [
+                "4ae2a13c.0a8d4"
+            ]
+        ]
+    },
+    {
+        "id": "5af1247f.2411bc",
+        "type": "ui_gauge",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "group": "6a19989.bafc168",
+        "order": 7,
+        "width": "8",
+        "height": "4",
+        "gtype": "gage",
+        "title": "",
+        "label": "units",
+        "format": "{{value | number:1}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "x": 530,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8a64247e.8a4b58",
+        "type": "ui_switch",
+        "z": "a148e93f.71c548",
+        "name": "Regulate",
+        "label": "Regulate",
+        "group": "6a19989.bafc168",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "bake01/regulate",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 420,
+        "y": 580,
+        "wires": [
+            [
+                "1e7cc2ad.2d9ffd"
+            ]
+        ]
+    },
+    {
+        "id": "a7d0de1f.f334d",
+        "type": "ui_text_input",
+        "z": "a148e93f.71c548",
+        "name": "Regulate Temperature",
+        "label": "Target",
+        "group": "6a19989.bafc168",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "mode": "text",
+        "delay": "300",
+        "topic": "bake01/regulateTemp",
+        "x": 440,
+        "y": 380,
+        "wires": [
+            [
+                "1e7cc2ad.2d9ffd"
+            ]
+        ]
+    },
+    {
+        "id": "6f3c8b2b.9bdd44",
+        "type": "ui_text_input",
+        "z": "a148e93f.71c548",
+        "name": "Regulate Window",
+        "label": "Window",
+        "group": "6a19989.bafc168",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "mode": "text",
+        "delay": "300",
+        "topic": "bake01/regulateWindow",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "1e7cc2ad.2d9ffd"
+            ]
+        ]
+    },
+    {
+        "id": "1f7cdbae.3a6c24",
+        "type": "inject",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/regulateTemp",
+        "payload": "20",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "a7d0de1f.f334d",
+                "1e7cc2ad.2d9ffd"
+            ]
+        ]
+    },
+    {
+        "id": "b7ec2c73.19b0d",
+        "type": "inject",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/regulateWindow",
+        "payload": "4",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 440,
+        "wires": [
+            [
+                "6f3c8b2b.9bdd44",
+                "1e7cc2ad.2d9ffd"
+            ]
+        ]
+    },
+    {
+        "id": "6bfb8c81.9ea674",
+        "type": "ui_template",
+        "z": "a148e93f.71c548",
+        "group": "6a19989.bafc168",
+        "name": "Restart Plot",
+        "order": 9,
+        "width": "8",
+        "height": "1",
+        "format": "<md-button \n    ng-style=\"{color:'black', background:'lime'}\"\n    ng-disabled='false'\n    ng-click=\"send({payload:true})\">Restart Plot</md-button>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 170,
+        "y": 40,
+        "wires": [
+            [
+                "61279c78.ea4314"
+            ]
+        ]
+    },
+    {
+        "id": "57c51b58.18d674",
+        "type": "ui_text",
+        "z": "a148e93f.71c548",
+        "group": "6a19989.bafc168",
+        "order": 6,
+        "width": "1",
+        "height": "1",
+        "name": "AboveWindow",
+        "label": "",
+        "format": "<font color={{(msg.payload == false) ? 'lime' : 'red'}} size=\"6\" ><i class=\"fa fa-circle\"></i></font>",
+        "layout": "col-center",
+        "x": 500,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "78f92015.c5902",
+        "type": "ui_text",
+        "z": "a148e93f.71c548",
+        "group": "6a19989.bafc168",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "name": "BelowWindow",
+        "label": "",
+        "format": "<font color={{(msg.payload == false) ? 'lime' : 'red'}} size=\"6\" ><i class=\"fa fa-circle\"></i></font>",
+        "layout": "col-center",
+        "x": 500,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e160ff36.c7d3e",
+        "type": "inject",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/regulate",
+        "payload": "false",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "8a64247e.8a4b58",
+                "1e7cc2ad.2d9ffd"
+            ]
+        ]
+    },
+    {
+        "id": "4a5c2995.764d78",
+        "type": "inject",
+        "z": "a148e93f.71c548",
+        "name": "Init",
+        "topic": "Init",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "ca3ecb4a.55d668",
+                "22b5c669.f6b98a"
+            ]
+        ]
+    },
+    {
+        "id": "ca3ecb4a.55d668",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Init",
+        "func": "flow.set('blankTemperature', false);\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c69e6aa.4738598",
+        "type": "ui_text_input",
+        "z": "a148e93f.71c548",
+        "name": "Bandwidth",
+        "label": "Bandwidth",
+        "group": "8d078b84.5c4638",
+        "order": 1,
+        "width": "6",
+        "height": "2",
+        "passthru": false,
+        "mode": "text",
+        "delay": "300",
+        "topic": "bandwidth",
+        "x": 630,
+        "y": 800,
+        "wires": [
+            [
+                "8f41dab2.b4be48"
+            ]
+        ]
+    },
+    {
+        "id": "770cff5c.e62a",
+        "type": "ui_text_input",
+        "z": "a148e93f.71c548",
+        "name": "Temp Cal",
+        "label": "Temp Cal",
+        "group": "8d078b84.5c4638",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "passthru": false,
+        "mode": "text",
+        "delay": "300",
+        "topic": "calFactor",
+        "x": 620,
+        "y": 840,
+        "wires": [
+            [
+                "8f41dab2.b4be48"
+            ]
+        ]
+    },
+    {
+        "id": "15c7b268.00babe",
+        "type": "ui_text_input",
+        "z": "a148e93f.71c548",
+        "name": "Temp Offset",
+        "label": "Temp Offset",
+        "group": "8d078b84.5c4638",
+        "order": 3,
+        "width": "6",
+        "height": "2",
+        "passthru": false,
+        "mode": "text",
+        "delay": "300",
+        "topic": "offset",
+        "x": 630,
+        "y": 880,
+        "wires": [
+            [
+                "8f41dab2.b4be48"
+            ]
+        ]
+    },
+    {
+        "id": "61b25693.5ad338",
+        "type": "ui_template",
+        "z": "a148e93f.71c548",
+        "group": "8d078b84.5c4638",
+        "name": "Set",
+        "order": 4,
+        "width": "6",
+        "height": "1",
+        "format": "<md-button \n    ng-style=\"{color:'black', background:'lime'}\"\n    ng-disabled='false'\n    ng-click=\"send({payload:true})\">Set</md-button>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 430,
+        "y": 660,
+        "wires": [
+            [
+                "a90c83d7.9d3ba"
+            ]
+        ]
+    },
+    {
+        "id": "22b5c669.f6b98a",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Init Settings",
+        "func": "var tempSettings = \n{\n    'topic':'tempSettings',\n    'payload':\n    {\n        'bandwidth':.5,\n        'calFactor':1,\n        'offset':20\n    }\n};\nglobal.set('tempSettings', tempSettings);\nreturn tempSettings;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 230,
+        "y": 740,
+        "wires": [
+            [
+                "bf07b9b2.a20c08",
+                "39c12fe0.f2fb"
+            ]
+        ]
+    },
+    {
+        "id": "bf07b9b2.a20c08",
+        "type": "delay",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 420,
+        "y": 740,
+        "wires": [
+            [
+                "484f0d8a.fa6674"
+            ]
+        ]
+    },
+    {
+        "id": "484f0d8a.fa6674",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Send Settings to Arduino",
+        "func": "var tempSettings = global.get('tempSettings');\nvar bandwidth = \n{\n    'topic':'bake01/bandwidth',\n    'payload':'bandwidth ' + tempSettings.payload.bandwidth.toString() + '!'\n}\nvar calFactor = \n{\n    'topic':'bake01/calFactor',\n    'payload':'calFactor ' + tempSettings.payload.calFactor.toString() + '!'\n}\nvar offset = \n{\n    'topic':'bake01/offset',\n    'payload':'offset ' + tempSettings.payload.offset.toString() + '!'\n}\n\nreturn [bandwidth,calFactor,offset];",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 650,
+        "y": 740,
+        "wires": [
+            [
+                "8ee32599.a560e8"
+            ],
+            [
+                "22e560c3.cacfa"
+            ],
+            [
+                "4e4c7e84.e2921",
+                "3ea83e5f.3f7272"
+            ]
+        ]
+    },
+    {
+        "id": "4e4c7e84.e2921",
+        "type": "delay",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 880,
+        "y": 780,
+        "wires": [
+            [
+                "f4020e27.c81b"
+            ]
+        ]
+    },
+    {
+        "id": "22e560c3.cacfa",
+        "type": "delay",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 880,
+        "y": 740,
+        "wires": [
+            [
+                "a795d7c1.4b6c28"
+            ]
+        ]
+    },
+    {
+        "id": "8ee32599.a560e8",
+        "type": "delay",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 880,
+        "y": 700,
+        "wires": [
+            [
+                "221bf630.5083ba"
+            ]
+        ]
+    },
+    {
+        "id": "8f41dab2.b4be48",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Hold New settings",
+        "func": "var tempSettings = global.get('tempSettings');\ntempSettings.payload[msg.topic] = Number(msg.payload);\nglobal.set('tempSettings',tempSettings)\nreturn tempSettings;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39c12fe0.f2fb",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Parse Settings",
+        "func": "var bandwidth = \n{\n    'topic':'bandwidth',\n    'payload':msg.payload.bandwidth\n}\nvar calFactor = \n{\n    'topic':'calFactor',\n    'payload':msg.payload.calFactor\n}\nvar offset = \n{\n    'topic':'offset',\n    'payload':msg.payload.offset\n}\nreturn [bandwidth, calFactor, offset];",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 420,
+        "y": 820,
+        "wires": [
+            [
+                "c69e6aa.4738598"
+            ],
+            [
+                "770cff5c.e62a"
+            ],
+            [
+                "15c7b268.00babe"
+            ]
+        ]
+    },
+    {
+        "id": "a90c83d7.9d3ba",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Get Settings",
+        "func": "var tempSettings = global.get('tempSettings');\nreturn tempSettings;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 660,
+        "wires": [
+            [
+                "484f0d8a.fa6674"
+            ]
+        ]
+    },
+    {
+        "id": "1e7cc2ad.2d9ffd",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "Regulation Control",
+        "topic": "",
+        "qos": "0",
+        "retain": "true",
+        "broker": "70780e1b.d30f1",
+        "x": 660,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "77b9ded5.bdae3",
+        "type": "mqtt in",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/temperature",
+        "qos": "0",
+        "broker": "70780e1b.d30f1",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "5dec37f7.7153b8"
+            ]
+        ]
+    },
+    {
+        "id": "d6bb3a66.985e98",
+        "type": "mqtt in",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/aboveWindow",
+        "qos": "0",
+        "broker": "70780e1b.d30f1",
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "4956d8d7.b74558"
+            ]
+        ]
+    },
+    {
+        "id": "ece3e923.8fa9b8",
+        "type": "mqtt in",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/belowWindow",
+        "qos": "0",
+        "broker": "70780e1b.d30f1",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "9fc1bd36.d477d"
+            ]
+        ]
+    },
+    {
+        "id": "66a71887.c08048",
+        "type": "mqtt in",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/HeaterStatus",
+        "qos": "0",
+        "broker": "70780e1b.d30f1",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "e31a4d9b.8946e"
+            ]
+        ]
+    },
+    {
+        "id": "87423354.f1248",
+        "type": "function",
+        "z": "a148e93f.71c548",
+        "name": "Regulation Control",
+        "func": "if (msg.topic == 'regulateTemp') context.set('regulateTemp', Number(msg.payload));\nif (msg.topic == 'regulateWindow') context.set('regulateWindow', Number(msg.payload));\nif (msg.topic == 'regulate')\n{\n    context.set('regulate', msg.payload);\n    if (!msg.payload)\n    {\n        var newMsg3 = {'topic':'HeaterOn', 'payload':0};\n        return [null, null, newMsg3];        \n    }\n}\nif (msg.topic != 'Temperature') return [null,null, null];\nvar regulateTemp =  context.get('regulateTemp');\nvar regulateWindow =  context.get('regulateWindow');\nvar regulate =  context.get('regulate');\nvar temperature = msg.payload;\nvar aboveWindow = false;\nif (temperature >  (regulateTemp + 0.5 * regulateWindow)) aboveWindow = true;\nvar belowWindow = false;\nif (temperature <  (regulateTemp - 0.5 * regulateWindow)) belowWindow = true;\nvar newMsg1 = {'topic':'aboveWindow', 'payload':aboveWindow};\nvar newMsg2 = {'topic':'belowWindow', 'payload':belowWindow};\nvar heaterOn = 0;\nvar newMsg3 = null;\nif (regulate)\n{\n    if (belowWindow) heaterOn = 1;\n    newMsg3 = {'topic':'HeaterOn', 'payload':heaterOn};\n}\nreturn [newMsg1, newMsg2, newMsg3];",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 710,
+        "y": 200,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b3186791.83e3f8",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "bake01/HeaterControl",
+        "topic": "",
+        "qos": "0",
+        "retain": "true",
+        "broker": "70780e1b.d30f1",
+        "x": 680,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "221bf630.5083ba",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "bake01/bandwidth",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "70780e1b.d30f1",
+        "x": 1070,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "a795d7c1.4b6c28",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "bake01/calFactor",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "70780e1b.d30f1",
+        "x": 1070,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "f4020e27.c81b",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "bake01/offset",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "70780e1b.d30f1",
+        "x": 1060,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "3ea83e5f.3f7272",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "topic": "bake01/sendingSettings",
+        "qos": "0",
+        "retain": "",
+        "broker": "70780e1b.d30f1",
+        "x": 930,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "4956d8d7.b74558",
+        "type": "json",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 350,
+        "y": 180,
+        "wires": [
+            [
+                "57c51b58.18d674"
+            ]
+        ]
+    },
+    {
+        "id": "5dec37f7.7153b8",
+        "type": "json",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "4ae2a13c.0a8d4",
+                "5af1247f.2411bc"
+            ]
+        ]
+    },
+    {
+        "id": "9fc1bd36.d477d",
+        "type": "json",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "78f92015.c5902"
+            ]
+        ]
+    },
+    {
+        "id": "e31a4d9b.8946e",
+        "type": "json",
+        "z": "a148e93f.71c548",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "57303339.71261c"
+            ]
+        ]
+    }
+]
