@@ -372,7 +372,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "2",
         "x": 160,
         "y": 440,
         "wires": [
@@ -446,7 +446,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "3",
         "x": 180,
         "y": 560,
         "wires": [
@@ -467,7 +467,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "4",
         "x": 130,
         "y": 660,
         "wires": [
@@ -680,7 +680,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 880,
-        "y": 740,
+        "y": 720,
         "wires": [
             [
                 "a795d7c1.4b6c28"
@@ -703,7 +703,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 880,
-        "y": 700,
+        "y": 660,
         "wires": [
             [
                 "221bf630.5083ba"
@@ -840,22 +840,6 @@
         ]
     },
     {
-        "id": "87423354.f1248",
-        "type": "function",
-        "z": "a148e93f.71c548",
-        "name": "Regulation Control",
-        "func": "if (msg.topic == 'regulateTemp') context.set('regulateTemp', Number(msg.payload));\nif (msg.topic == 'regulateWindow') context.set('regulateWindow', Number(msg.payload));\nif (msg.topic == 'regulate')\n{\n    context.set('regulate', msg.payload);\n    if (!msg.payload)\n    {\n        var newMsg3 = {'topic':'HeaterOn', 'payload':0};\n        return [null, null, newMsg3];        \n    }\n}\nif (msg.topic != 'Temperature') return [null,null, null];\nvar regulateTemp =  context.get('regulateTemp');\nvar regulateWindow =  context.get('regulateWindow');\nvar regulate =  context.get('regulate');\nvar temperature = msg.payload;\nvar aboveWindow = false;\nif (temperature >  (regulateTemp + 0.5 * regulateWindow)) aboveWindow = true;\nvar belowWindow = false;\nif (temperature <  (regulateTemp - 0.5 * regulateWindow)) belowWindow = true;\nvar newMsg1 = {'topic':'aboveWindow', 'payload':aboveWindow};\nvar newMsg2 = {'topic':'belowWindow', 'payload':belowWindow};\nvar heaterOn = 0;\nvar newMsg3 = null;\nif (regulate)\n{\n    if (belowWindow) heaterOn = 1;\n    newMsg3 = {'topic':'HeaterOn', 'payload':heaterOn};\n}\nreturn [newMsg1, newMsg2, newMsg3];",
-        "outputs": 3,
-        "noerr": 0,
-        "x": 710,
-        "y": 200,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
         "id": "b3186791.83e3f8",
         "type": "mqtt out",
         "z": "a148e93f.71c548",
@@ -877,8 +861,8 @@
         "qos": "",
         "retain": "",
         "broker": "70780e1b.d30f1",
-        "x": 1070,
-        "y": 700,
+        "x": 1090,
+        "y": 660,
         "wires": []
     },
     {
@@ -890,8 +874,8 @@
         "qos": "",
         "retain": "",
         "broker": "70780e1b.d30f1",
-        "x": 1070,
-        "y": 740,
+        "x": 1090,
+        "y": 720,
         "wires": []
     },
     {
@@ -903,7 +887,7 @@
         "qos": "",
         "retain": "",
         "broker": "70780e1b.d30f1",
-        "x": 1060,
+        "x": 1080,
         "y": 780,
         "wires": []
     },
@@ -917,7 +901,7 @@
         "retain": "",
         "broker": "70780e1b.d30f1",
         "x": 930,
-        "y": 820,
+        "y": 840,
         "wires": []
     },
     {
