@@ -2,7 +2,14 @@
     {
         "id": "a148e93f.71c548",
         "type": "tab",
-        "label": "Bakeout",
+        "label": "Bakeout-01-Gui",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e1abda9a.72ef48",
+        "type": "tab",
+        "label": "Bakeout-02-Gui",
         "disabled": false,
         "info": ""
     },
@@ -99,7 +106,7 @@
         "id": "f66b31d0.8e554",
         "type": "ui_tab",
         "z": "",
-        "name": "Bakeout",
+        "name": "Bakeout-01",
         "icon": "dashboard",
         "order": 1
     },
@@ -113,25 +120,6 @@
         "disp": false,
         "width": "8",
         "collapse": false
-    },
-    {
-        "id": "8d078b84.5c4638",
-        "type": "ui_group",
-        "z": "",
-        "name": "Settings",
-        "tab": "440eea00.76b618",
-        "order": 1,
-        "disp": false,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "440eea00.76b618",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Settings",
-        "icon": "dashboard",
-        "order": 2
     },
     {
         "id": "70780e1b.d30f1",
@@ -151,6 +139,25 @@
         "birthTopic": "",
         "birthQos": "0",
         "birthPayload": ""
+    },
+    {
+        "id": "1629f193.2cf5ce",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Bakeout-02",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "2a65ec93.c70b94",
+        "type": "ui_group",
+        "z": "",
+        "name": "Manual control",
+        "tab": "1629f193.2cf5ce",
+        "order": 1,
+        "disp": false,
+        "width": "8",
+        "collapse": false
     },
     {
         "id": "57303339.71261c",
@@ -276,7 +283,7 @@
         "order": 2,
         "width": "4",
         "height": "1",
-        "passthru": false,
+        "passthru": true,
         "decouple": "false",
         "topic": "bake01/regulate",
         "style": "",
@@ -288,8 +295,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 420,
-        "y": 580,
+        "x": 480,
+        "y": 480,
         "wires": [
             [
                 "1e7cc2ad.2d9ffd"
@@ -306,12 +313,12 @@
         "order": 4,
         "width": "3",
         "height": "1",
-        "passthru": false,
+        "passthru": true,
         "mode": "text",
         "delay": "300",
         "topic": "bake01/regulateTemp",
         "x": 440,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "1e7cc2ad.2d9ffd"
@@ -328,12 +335,12 @@
         "order": 5,
         "width": "3",
         "height": "1",
-        "passthru": false,
+        "passthru": true,
         "mode": "text",
         "delay": "300",
         "topic": "bake01/regulateWindow",
-        "x": 370,
-        "y": 520,
+        "x": 450,
+        "y": 440,
         "wires": [
             [
                 "1e7cc2ad.2d9ffd"
@@ -351,13 +358,13 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
+        "onceDelay": "4",
         "x": 170,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "a7d0de1f.f334d",
-                "1e7cc2ad.2d9ffd"
+                "e2c90393.36c1f"
             ]
         ]
     },
@@ -372,13 +379,13 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "2",
-        "x": 160,
+        "onceDelay": "5",
+        "x": 170,
         "y": 440,
         "wires": [
             [
                 "6f3c8b2b.9bdd44",
-                "1e7cc2ad.2d9ffd"
+                "e2c90393.36c1f"
             ]
         ]
     },
@@ -446,13 +453,13 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "3",
+        "onceDelay": "6",
         "x": 180,
-        "y": 560,
+        "y": 480,
         "wires": [
             [
                 "8a64247e.8a4b58",
-                "1e7cc2ad.2d9ffd"
+                "e2c90393.36c1f"
             ]
         ]
     },
@@ -468,8 +475,8 @@
         "crontab": "",
         "once": true,
         "onceDelay": "4",
-        "x": 130,
-        "y": 660,
+        "x": 110,
+        "y": 780,
         "wires": [
             [
                 "ca3ecb4a.55d668",
@@ -485,8 +492,8 @@
         "func": "flow.set('blankTemperature', false);\nreturn null;",
         "outputs": 1,
         "noerr": 0,
-        "x": 290,
-        "y": 660,
+        "x": 270,
+        "y": 780,
         "wires": [
             []
         ]
@@ -497,16 +504,16 @@
         "z": "a148e93f.71c548",
         "name": "Bandwidth",
         "label": "Bandwidth",
-        "group": "8d078b84.5c4638",
-        "order": 1,
-        "width": "6",
+        "group": "6a19989.bafc168",
+        "order": 10,
+        "width": "3",
         "height": "2",
         "passthru": false,
         "mode": "text",
         "delay": "300",
         "topic": "bandwidth",
-        "x": 630,
-        "y": 800,
+        "x": 610,
+        "y": 920,
         "wires": [
             [
                 "8f41dab2.b4be48"
@@ -519,16 +526,16 @@
         "z": "a148e93f.71c548",
         "name": "Temp Cal",
         "label": "Temp Cal",
-        "group": "8d078b84.5c4638",
-        "order": 2,
-        "width": "6",
+        "group": "6a19989.bafc168",
+        "order": 11,
+        "width": "2",
         "height": "2",
         "passthru": false,
         "mode": "text",
         "delay": "300",
         "topic": "calFactor",
-        "x": 620,
-        "y": 840,
+        "x": 600,
+        "y": 960,
         "wires": [
             [
                 "8f41dab2.b4be48"
@@ -541,16 +548,16 @@
         "z": "a148e93f.71c548",
         "name": "Temp Offset",
         "label": "Temp Offset",
-        "group": "8d078b84.5c4638",
-        "order": 3,
-        "width": "6",
+        "group": "6a19989.bafc168",
+        "order": 12,
+        "width": "3",
         "height": "2",
         "passthru": false,
         "mode": "text",
         "delay": "300",
         "topic": "offset",
-        "x": 630,
-        "y": 880,
+        "x": 610,
+        "y": 1000,
         "wires": [
             [
                 "8f41dab2.b4be48"
@@ -561,17 +568,17 @@
         "id": "61b25693.5ad338",
         "type": "ui_template",
         "z": "a148e93f.71c548",
-        "group": "8d078b84.5c4638",
+        "group": "6a19989.bafc168",
         "name": "Set",
-        "order": 4,
-        "width": "6",
+        "order": 13,
+        "width": "8",
         "height": "1",
-        "format": "<md-button \n    ng-style=\"{color:'black', background:'lime'}\"\n    ng-disabled='false'\n    ng-click=\"send({payload:true})\">Set</md-button>\n",
+        "format": "<md-button \n    ng-style=\"{color:'black', background:'orange'}\"\n    ng-disabled='false'\n    ng-click=\"send({payload:true})\">Set Bandwidth-Cal-Offset</md-button>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 430,
-        "y": 660,
+        "x": 410,
+        "y": 780,
         "wires": [
             [
                 "a90c83d7.9d3ba"
@@ -583,11 +590,11 @@
         "type": "function",
         "z": "a148e93f.71c548",
         "name": "Init Settings",
-        "func": "var tempSettings = \n{\n    'topic':'tempSettings',\n    'payload':\n    {\n        'bandwidth':.5,\n        'calFactor':1,\n        'offset':20\n    }\n};\nglobal.set('tempSettings', tempSettings);\nreturn tempSettings;",
+        "func": "var tempSettings = \n{\n    'topic':'tempSettings',\n    'payload':\n    {\n        'bandwidth':0.5,\n        'calFactor':1,\n        'offset':30\n    }\n};\nglobal.set('tempSettings', tempSettings);\nreturn tempSettings;",
         "outputs": 1,
         "noerr": 0,
-        "x": 230,
-        "y": 740,
+        "x": 210,
+        "y": 860,
         "wires": [
             [
                 "bf07b9b2.a20c08",
@@ -610,8 +617,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 420,
-        "y": 740,
+        "x": 400,
+        "y": 860,
         "wires": [
             [
                 "484f0d8a.fa6674"
@@ -626,8 +633,8 @@
         "func": "var tempSettings = global.get('tempSettings');\nvar bandwidth = \n{\n    'topic':'bake01/bandwidth',\n    'payload':'bandwidth ' + tempSettings.payload.bandwidth.toString() + '!'\n}\nvar calFactor = \n{\n    'topic':'bake01/calFactor',\n    'payload':'calFactor ' + tempSettings.payload.calFactor.toString() + '!'\n}\nvar offset = \n{\n    'topic':'bake01/offset',\n    'payload':'offset ' + tempSettings.payload.offset.toString() + '!'\n}\n\nreturn [bandwidth,calFactor,offset];",
         "outputs": 3,
         "noerr": 0,
-        "x": 650,
-        "y": 740,
+        "x": 630,
+        "y": 860,
         "wires": [
             [
                 "8ee32599.a560e8"
@@ -647,8 +654,8 @@
         "z": "a148e93f.71c548",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -656,8 +663,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 880,
-        "y": 780,
+        "x": 870,
+        "y": 900,
         "wires": [
             [
                 "f4020e27.c81b"
@@ -670,8 +677,8 @@
         "z": "a148e93f.71c548",
         "name": "",
         "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -679,8 +686,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 880,
-        "y": 720,
+        "x": 870,
+        "y": 840,
         "wires": [
             [
                 "a795d7c1.4b6c28"
@@ -693,8 +700,8 @@
         "z": "a148e93f.71c548",
         "name": "",
         "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "seconds",
+        "timeout": "300",
+        "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -702,8 +709,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 880,
-        "y": 660,
+        "x": 870,
+        "y": 780,
         "wires": [
             [
                 "221bf630.5083ba"
@@ -718,8 +725,8 @@
         "func": "var tempSettings = global.get('tempSettings');\ntempSettings.payload[msg.topic] = Number(msg.payload);\nglobal.set('tempSettings',tempSettings)\nreturn tempSettings;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 870,
-        "y": 900,
+        "x": 850,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -732,8 +739,8 @@
         "func": "var bandwidth = \n{\n    'topic':'bandwidth',\n    'payload':msg.payload.bandwidth\n}\nvar calFactor = \n{\n    'topic':'calFactor',\n    'payload':msg.payload.calFactor\n}\nvar offset = \n{\n    'topic':'offset',\n    'payload':msg.payload.offset\n}\nreturn [bandwidth, calFactor, offset];",
         "outputs": 3,
         "noerr": 0,
-        "x": 420,
-        "y": 820,
+        "x": 400,
+        "y": 940,
         "wires": [
             [
                 "c69e6aa.4738598"
@@ -754,8 +761,8 @@
         "func": "var tempSettings = global.get('tempSettings');\nreturn tempSettings;",
         "outputs": 1,
         "noerr": 0,
-        "x": 590,
-        "y": 660,
+        "x": 570,
+        "y": 780,
         "wires": [
             [
                 "484f0d8a.fa6674"
@@ -768,11 +775,11 @@
         "z": "a148e93f.71c548",
         "name": "Regulation Control",
         "topic": "",
-        "qos": "0",
-        "retain": "true",
+        "qos": "2",
+        "retain": "false",
         "broker": "70780e1b.d30f1",
-        "x": 660,
-        "y": 520,
+        "x": 670,
+        "y": 440,
         "wires": []
     },
     {
@@ -846,7 +853,7 @@
         "name": "bake01/HeaterControl",
         "topic": "",
         "qos": "0",
-        "retain": "true",
+        "retain": "false",
         "broker": "70780e1b.d30f1",
         "x": 680,
         "y": 300,
@@ -858,11 +865,11 @@
         "z": "a148e93f.71c548",
         "name": "bake01/bandwidth",
         "topic": "",
-        "qos": "",
-        "retain": "",
+        "qos": "2",
+        "retain": "false",
         "broker": "70780e1b.d30f1",
-        "x": 1090,
-        "y": 660,
+        "x": 1070,
+        "y": 780,
         "wires": []
     },
     {
@@ -871,11 +878,11 @@
         "z": "a148e93f.71c548",
         "name": "bake01/calFactor",
         "topic": "",
-        "qos": "",
-        "retain": "",
+        "qos": "2",
+        "retain": "false",
         "broker": "70780e1b.d30f1",
-        "x": 1090,
-        "y": 720,
+        "x": 1070,
+        "y": 840,
         "wires": []
     },
     {
@@ -884,11 +891,11 @@
         "z": "a148e93f.71c548",
         "name": "bake01/offset",
         "topic": "",
-        "qos": "",
-        "retain": "",
+        "qos": "2",
+        "retain": "false",
         "broker": "70780e1b.d30f1",
-        "x": 1080,
-        "y": 780,
+        "x": 1060,
+        "y": 900,
         "wires": []
     },
     {
@@ -897,11 +904,11 @@
         "z": "a148e93f.71c548",
         "name": "",
         "topic": "bake01/sendingSettings",
-        "qos": "0",
-        "retain": "",
+        "qos": "2",
+        "retain": "false",
         "broker": "70780e1b.d30f1",
-        "x": 930,
-        "y": 840,
+        "x": 910,
+        "y": 960,
         "wires": []
     },
     {
@@ -967,6 +974,38 @@
             [
                 "57303339.71261c"
             ]
+        ]
+    },
+    {
+        "id": "e2c90393.36c1f",
+        "type": "mqtt out",
+        "z": "a148e93f.71c548",
+        "name": "Regulation Setup",
+        "topic": "",
+        "qos": "0",
+        "retain": "true",
+        "broker": "70780e1b.d30f1",
+        "x": 490,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "6dab630d.ff532c",
+        "type": "ui_template",
+        "z": "e1abda9a.72ef48",
+        "group": "2a65ec93.c70b94",
+        "name": "Place holder",
+        "order": 9,
+        "width": "8",
+        "height": "1",
+        "format": "<md-button \n    ng-style=\"{color:'black', background:'lime'}\"\n    ng-disabled='false'\n    ng-click=\"send({payload:true})\">Place Holder</md-button>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
         ]
     }
 ]
